@@ -98,3 +98,21 @@ describe "An example of the true/false/nil Matchers" do
     expect(z).to be_nil
     end
 end
+
+#Block causing error Matchers
+
+describe "Ane xample of the error Matchers" do
+  it "shoudl show how the error matchers work" do
+
+    # The three possible formats are below:
+    #The following expectations will all pass
+    #expect{block}.to raise_error(ErrorClass)
+    #expect{block}.to raise_error("error message")
+    #expect{blovk}.to raise_error(ErrorClass, "error message")
+    #The following expectations will all pass
+
+    expect{1/0}.to raise_error(ZeroDivisionError)
+    expect{1/0}.to raise_error("divided by 0")
+    expect{1/0}.to raise_error(ZeroDivisionError)
+  end
+end
